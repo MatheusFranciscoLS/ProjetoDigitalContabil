@@ -22,12 +22,10 @@ Vamos criar um sistema que permita aos usuários gerenciar suas finanças de for
   - Criação e categorização de despesas.
   - Edição e exclusão de despesas.
   - Visualização de despesas por categoria, data e valor.
-  
 - **Receitas:**
   - Criação e categorização de receitas.
   - Edição e exclusão de receitas.
   - Visualização de receitas por categoria, data e valor.
-  
 - **Relatórios:**
   - Geração de relatórios financeiros mensais e anuais.
   - Gráficos e visualizações de tendências de despesas e receitas.
@@ -86,27 +84,30 @@ Vamos criar um sistema que permita aos usuários gerenciar suas finanças de for
 
 ### Diagrama de Gantt
 
-| Tarefa                                          | Duração  | Início       | Término      |
-|-------------------------------------------------|----------|--------------|--------------|
-| Planejamento e Pesquisa                         | 2 semanas | 01/10/2024   | 14/10/2024   |
-| Design da Arquitetura                           | 2 semanas | 15/10/2024   | 28/10/2024   |
-| Configuração do Ambiente                        | 2 semanas | 29/10/2024   | 11/11/2024   |
-| Desenvolvimento Backend                         | 4 semanas | 12/11/2024   | 09/12/2024   |
-| Desenvolvimento Frontend                        | 4 semanas | 10/12/2024   | 06/01/2025   |
-| Integração Frontend e Backend                   | 2 semanas | 07/01/2025   | 20/01/2025   |
-| Testes e Ajustes                                | 3 semanas | 21/01/2025   | 10/02/2025   |
-| Documentação e Preparação para Lançamento       | 2 semanas | 11/02/2025   | 24/02/2025   |
-| Lançamento e Avaliação                          | 1 semana  | 25/02/2025   | 03/03/2025   |
+| Tarefa                                    | Duração   | Início     | Término    |
+| ----------------------------------------- | --------- | ---------- | ---------- |
+| Planejamento e Pesquisa                   | 2 semanas | 01/10/2024 | 14/10/2024 |
+| Design da Arquitetura                     | 2 semanas | 15/10/2024 | 28/10/2024 |
+| Configuração do Ambiente                  | 2 semanas | 29/10/2024 | 11/11/2024 |
+| Desenvolvimento Backend                   | 4 semanas | 12/11/2024 | 09/12/2024 |
+| Desenvolvimento Frontend                  | 4 semanas | 10/12/2024 | 06/01/2025 |
+| Integração Frontend e Backend             | 2 semanas | 07/01/2025 | 20/01/2025 |
+| Testes e Ajustes                          | 3 semanas | 21/01/2025 | 10/02/2025 |
+| Documentação e Preparação para Lançamento | 2 semanas | 11/02/2025 | 24/02/2025 |
+| Lançamento e Avaliação                    | 1 semana  | 25/02/2025 | 03/03/2025 |
 
 ## Análise de Risco
 
 - **Risco de Atraso no Desenvolvimento:**
+
   - Mitigação: Planejamento detalhado e divisão clara de tarefas, revisões semanais de progresso.
 
 - **Problemas de Segurança:**
+
   - Mitigação: Utilização de bibliotecas e práticas de segurança recomendadas, revisão de código e auditorias de segurança.
 
 - **Dificuldades de Integração entre Frontend e Backend:**
+
   - Mitigação: Testes contínuos e comunicação clara entre as equipes de desenvolvimento.
 
 - **Problemas de Performance:**
@@ -136,10 +137,10 @@ Vamos criar um sistema que permita aos usuários gerenciar suas finanças de for
 
 ### Diagramas
 
-- **Diagrama de Classe:** ![Diagrama de Classe](img/DIAGRAMA%20CLASSE.png)
-- **Diagrama de Casos de Uso:** ![Diagrama de Casos de Uso](img/DIAGRAMA%20DE%20USO.png)
-- **Diagrama de Fluxo:** ![Diagrama de Fluxo](img/DIAGRAMA%20FLUXO.png)
+![Diagrama de Classe](img/DIAGRAMA%20CLASSE.png)
+![Diagrama de Casos de Uso](img/DIAGRAMA%20DE%20USO.png)
+![Diagrama de Fluxo](img/DIAGRAMA%20FLUXO.png)
 
 ### Prototipagem
 
-- **Prototipagem:** ![Prototipagem](img/PROTOTIPAGEM.png)
+![Prototipagem](img/PROTOTIPAGEM.png)
