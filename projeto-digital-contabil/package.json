@@ -1,5 +1,5 @@
 {
-  "name": "projeto-digital-contabil",
+  "name": "task-app-jwt",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,8 +11,8 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.6.2",
-    "next": "14.2.11",
+    "mongoose": "^8.6.1",
+    "next": "14.2.8",
     "react": "^18",
     "react-dom": "^18"
   }
