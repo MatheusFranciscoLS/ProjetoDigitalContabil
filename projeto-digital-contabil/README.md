@@ -146,6 +146,4 @@ Vamos criar um sistema que permita aos usuários gerenciar suas finanças de for
 ![Diagrama de Fluxo](img/DIAGRAMA%20FLUXO.png)
 
 ### Prototipagem
-
-#### Prototipagem
 ![Prototipagem](img/PROTOTIPAGEM.png)
