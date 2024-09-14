@@ -136,13 +136,16 @@ Vamos criar um sistema que permita aos usuários gerenciar suas finanças de for
 
 ### Diagramas
 
-- **Diagrama de Classe:**
+#### Diagrama de Classe
 ![Diagrama de Classe](img/DIAGRAMA%20CLASSE.png)
-- **Diagrama de Casos de Uso:**
+
+#### Diagrama de Casos de Uso
 ![Diagrama de Casos de Uso](img/DIAGRAMA%20DE%20USO.png)
-- **Diagrama de Fluxo:**
+
+#### Diagrama de Fluxo
 ![Diagrama de Fluxo](img/DIAGRAMA%20FLUXO.png)
 
 ### Prototipagem
 
- ![Prototipagem](img/PROTOTIPAGEM.png)
+#### Prototipagem
+![Prototipagem](img/PROTOTIPAGEM.png)
