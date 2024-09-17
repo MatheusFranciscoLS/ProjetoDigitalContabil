@@ -1,19 +1,22 @@
-// utils/dbConnect.js
 import mongoose from "mongoose";
 
-const dbConnect = async () => {
-  if (mongoose.connection.readyState >= 1) return;
 
-  try {
-    await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log("MongoDB connected successfully.");
-  } catch (error) {
-    console.error("MongoDB connection error:", error);
-    process.exit(1);
-  }
-};
+const DATABASE_URL = process.env.DATABASE_URL;
 
-export default dbConnect;
+
+//verificação
+if (!DATABASE_URL) {
+    throw new Error(
+        'Por favor, defina a variável DATABASE_URL no arquivo .env.local'
+    );
+}
+
+
+const connectMongo = async () => {
+    mongoose.connect(DATABASE_URL)
+        .then("Conectado com Mongo")
+        .catch(err => console.error(err));
+}
+
+
+export default connectMongo;
