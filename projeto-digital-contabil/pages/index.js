@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./styles.module.css"; // Importa o arquivo de estilos CSS
 
 const Home = () => {
@@ -13,7 +13,21 @@ const Home = () => {
   const [isAdding, setIsAdding] = useState(false);
   const [isEditing, setIsEditing] = useState(null); // Estado para controle de edição
   const [filter, setFilter] = useState(null);
-  const [successMessage, ] = useState("");
+  const [successMessage] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Verifica se o token está presente no localStorage
+    const token = localStorage.getItem("token");
+    setIsLoggedIn(!!token);
+  }, []);
+
+  const handleLogout = () => {
+    // Remove o token do localStorage e atualiza o estado de autenticação
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    window.location.href = "/login"; // Redireciona para a página de login
+  };
 
   const handleDone = (id) => {
     setExpenses((prevExpenses) =>
@@ -24,7 +38,9 @@ const Home = () => {
   };
 
   const handleDelete = (id) => {
-    const confirmDelete = window.confirm("Tem certeza de que deseja excluir esta tarefa?");
+    const confirmDelete = window.confirm(
+      "Tem certeza de que deseja excluir esta tarefa?"
+    );
     if (confirmDelete) {
       setExpenses((prevExpenses) =>
         prevExpenses.filter((expense) => expense.id !== id)
@@ -153,18 +169,26 @@ const Home = () => {
             <img src="/img/logo.png" alt="Logo" />
           </div>
           <div className={styles.headerButtons}>
-            <button
-              className={styles.headerButton}
-              onClick={() => (window.location.href = "/login")}
-            >
-              Login
-            </button>
-            <button
-              className={styles.headerButton}
-              onClick={() => (window.location.href = "/register")}
-            >
-              Cadastro
-            </button>
+            {!isLoggedIn ? (
+              <>
+                <button
+                  className={styles.headerButton}
+                  onClick={() => (window.location.href = "/login")}
+                >
+                  Login
+                </button>
+                <button
+                  className={styles.headerButton}
+                  onClick={() => (window.location.href = "/register")}
+                >
+                  Cadastro
+                </button>
+              </>
+            ) : (
+              <button className={styles.headerButton} onClick={handleLogout}>
+                Logout
+              </button>
+            )}
           </div>
         </div>
       </header>
@@ -238,7 +262,9 @@ const Home = () => {
           </div>
         </div>
 
-        {successMessage && <p className={styles.successMessage}>{successMessage}</p>}
+        {successMessage && (
+          <p className={styles.successMessage}>{successMessage}</p>
+        )}
 
         <div className={styles.expenses}>
           {filteredExpenses.map((expense) => (
@@ -255,7 +281,9 @@ const Home = () => {
                 <button onClick={() => handleDone(expense.id)}>
                   {expense.done ? "Desmarcar" : "Concluído"}
                 </button>
-                <button onClick={() => handleDelete(expense.id)}>Excluir</button>
+                <button onClick={() => handleDelete(expense.id)}>
+                  Excluir
+                </button>
               </div>
             </div>
           ))}
@@ -263,13 +291,28 @@ const Home = () => {
       </main>
 
       <footer className={styles.footer}>
-        <p>&copy; 2023 Minha Finança. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Minha Finança. Todos os direitos reservados.</p>
         <div className={styles.socialLinks}>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-facebook"></i>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Facebook
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-instagram"></i>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Twitter
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
           </a>
         </div>
       </footer>

@@ -1,29 +1,21 @@
-// utils/middleware.js
-import jwt from "jsonwebtoken";
-import { NextResponse } from "next/server";
 
-export function jwtMiddleware(handler) {
-  return async (req) => {
-    const token = req.headers.get("Authorization")?.replace("Bearer ", "");
+import jwt from 'jsonwebtoken';
 
-    if (!token) {
-      return NextResponse.json(
-        { success: false, message: "Token não fornecido" },
-        { status: 401 }
-      );
-    }
 
-    try {
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      req.user = decoded; // Adiciona o usuário decodificado ao objeto req
-      return handler(req);
-    } catch (error) {
-      console.error("Erro de autenticação:", error);
-      return NextResponse.json(
-        { success: false, message: "Token inválido" },
-        { status: 401 }
-      );
-    }
-  };
-}
+export const jwtMiddleware = (handler) => async (req, res) => {
+  const token = req.headers.authorization?.split(' ')[1]; // Obtém o token do header
 
+
+  if (!token) {
+    return res.status(401).json({ message: 'Token ausente ou inválido' });
+  }
+
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET); // Verifica o token
+    req.user = decoded; // Armazena os dados do usuário no request
+    return handler(req, res); // Continua para o próximo handler
+  } catch (error) {
+    return res.status(401).json({ message: 'Token inválido' });
+  }
+};
